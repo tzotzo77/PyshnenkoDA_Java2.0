@@ -107,7 +107,7 @@ public class Task_3 {
             // Поиск строки с нибольшей длиной
             String maxLengthWord = myArray[0];
             for (int i = 1; i < myArray.length; i++) {
-                if (myArray[i].length() > myArray[i - 1].length()) {
+                if (myArray[i].length() > maxLengthWord.length()) {
                     maxLengthWord = myArray[i];
                 }
             }

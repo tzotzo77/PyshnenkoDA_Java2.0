@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+import Calculator.Difference;
+import Calculator.Division;
+import Calculator.Multiplication;
+import Calculator.Sum;
+
+public class Task_5_and_Task_7 {
+    public static int getNum1() { // метод получения первого числа с консольного ввода
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите первое число : ");
+        int n1 = sc.nextInt();
+        return n1;
+    }
+
+    public static int getNum2() { // метод получения второго числа с консольного ввода
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите второе число : ");
+        int n2 = sc.nextInt();
+        return n2;
+    }
+
+    public static char getOperation() { // метод получения знака операции с консольного ввода
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Выберите операцию : (+ : сумма, - : разность, * : произведение, / : частное)");
+        char oper = sc.next().charAt(0);
+        return oper;
+    }
+
+    public static void main(String[] args) {
+        char operation = getOperation();
+        switch (operation) {
+            case '+':
+                Sum sum = new Sum();
+                System.out.println("Результат = " + sum.calc(getNum1(), getNum2()));
+                break;
+            case '-':
+                Difference diff = new Difference();
+                System.out.println("Результат = " + diff.calc(getNum1(), getNum2()));
+                break;
+            case '*':
+                Multiplication mult = new Multiplication();
+                System.out.println("Результат = " + mult.calc(getNum1(), getNum2()));
+                break;
+            case '/':
+                try {
+                    Division div = new Division();
+                    System.out.println("Результат = " + div.calc(getNum1(), getNum2()));
+                } catch (ArithmeticException e) {
+                    System.out.println("Ошибка " + e);
+                    System.out.println("На ноль делить нельзя!!!");
+                }
+                break;
+            default:
+                System.out.println("Неверная операция!");
+        }
+
+    }
+
+}

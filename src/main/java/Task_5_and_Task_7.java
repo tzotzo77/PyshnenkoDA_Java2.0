@@ -1,22 +1,28 @@
-import java.util.Scanner;
-
+import java.util.*;
 import Calculator.Difference;
 import Calculator.Division;
 import Calculator.Multiplication;
 import Calculator.Sum;
 
 public class Task_5_and_Task_7 {
-    public static int getNum1() { // метод получения первого числа с консольного ввода
-        Scanner sc = new Scanner(System.in);
+    public static double getNum1() { // метод получения первого числа с консольного ввода
+        Scanner scanInt1 = new Scanner(System.in);
         System.out.print("Введите первое число : ");
-        int n1 = sc.nextInt();
+        double n1 = 0;
+        try {
+            n1 = scanInt1.nextDouble();
+        }catch (InputMismatchException ex){
+            System.out.println("Ошибка " + ex);
+            System.out.println("Некорректный ввод числа! Поробуйте снова..");
+            getNum1();
+        }
         return n1;
     }
 
-    public static int getNum2() { // метод получения второго числа с консольного ввода
-        Scanner sc = new Scanner(System.in);
+    public static double getNum2() { // метод получения второго числа с консольного ввода
+        Scanner scanInt2 = new Scanner(System.in);
         System.out.print("Введите второе число : ");
-        int n2 = sc.nextInt();
+        double n2 = scanInt2.nextDouble();
         return n2;
     }
 
@@ -52,9 +58,7 @@ public class Task_5_and_Task_7 {
                 }
                 break;
             default:
-                System.out.println("Неверная операция!");
+                System.out.println("Неверная операция! ");
         }
-
     }
-
 }

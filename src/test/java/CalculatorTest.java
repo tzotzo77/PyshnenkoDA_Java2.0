@@ -44,7 +44,7 @@ public class CalculatorTest {
         double x = 7.545;
         double y = 8.000;
         double mySum = div.calc(x, y);
-        assertEquals("Некорректная произведение чисел", x / y, mySum, mySum - (x / y) );
+        assertEquals("Некорректная частное чисел", x / y, mySum, mySum - (x / y) );
     }
 
     @Test
@@ -53,13 +53,14 @@ public class CalculatorTest {
         Division div = new Division();
         double x = 7.545;
         double y = 0;
-        double mySum = 0;
+        ArithmeticException exception = null;
         try {
-            mySum = div.calc(x, y);
+            div.calc(x, y);
         }catch (ArithmeticException e){
+            exception = e;
             System.out.println("Ошибка " + e);
             System.out.println("На ноль делить нельзя!!!");
         }
-        assertEquals("Не поймано исключение деления на ноль", "Ошибка java.lang.ArithmeticException\n" + "На ноль делить нельзя!!!", mySum, mySum - (x / y) );
+        Assert.assertNotNull("Не поймали эксепшн", exception);
     }
 }

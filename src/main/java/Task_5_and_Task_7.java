@@ -1,8 +1,5 @@
 import java.util.*;
-import Calculator.Difference;
-import Calculator.Division;
-import Calculator.Multiplication;
-import Calculator.Sum;
+import Calculator.*;
 
 public class Task_5_and_Task_7 {
     public static double getNum1() { // метод получения первого числа с консольного ввода
@@ -13,8 +10,8 @@ public class Task_5_and_Task_7 {
             n1 = scanInt1.nextDouble();
         }catch (InputMismatchException ex){
             System.out.println("Ошибка " + ex);
-            System.out.println("Некорректный ввод числа! Поробуйте снова..");
-            getNum1();
+            System.out.println("Некорректный ввод числа!(дробные числа вводить через запятую) Поробуйте снова..");
+            n1 = getNum1();
         }
         return n1;
     }
@@ -22,7 +19,14 @@ public class Task_5_and_Task_7 {
     public static double getNum2() { // метод получения второго числа с консольного ввода
         Scanner scanInt2 = new Scanner(System.in);
         System.out.print("Введите второе число : ");
-        double n2 = scanInt2.nextDouble();
+        double n2 = 0;
+        try {
+            n2 = scanInt2.nextDouble();
+        }catch (InputMismatchException ex){
+            System.out.println("Ошибка " + ex);
+            System.out.println("Некорректный ввод числа! (дробные числа вводить через запятую) Поробуйте снова..");
+            n2 = getNum2();
+        }
         return n2;
     }
 

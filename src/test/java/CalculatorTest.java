@@ -43,8 +43,8 @@ public class CalculatorTest {
         Division div = new Division();
         double x = 7.545;
         double y = 8.000;
-        double mySum = div.calc(x, y);
-        assertEquals("Некорректная частное чисел", x / y, mySum, mySum - (x / y) );
+        double result = div.calc(x, y);
+        assertEquals("Некорректная частное чисел", x / y, result, result - (x / y) );
     }
 
     @Test

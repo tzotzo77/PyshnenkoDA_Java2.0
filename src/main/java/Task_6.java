@@ -35,9 +35,8 @@ public class Task_6 {
             if (counter >= max) {
                 max = counter;
             }
-            if (myArrayList.get(i).equals(myArrayList.get(i - 1))) {
-            } else {
-                System.out.println("Число потороений слова \"" + myArrayList.get(i) + "\" = " + counter);
+            if (!myArrayList.get(i).equals(myArrayList.get(i - 1))) {
+                System.out.println("Число повтороений слова \"" + myArrayList.get(i) + "\" = " + counter);
                 myHashMap.put(myArrayList.get(i), counter);
             }
         }

@@ -18,6 +18,7 @@ public class Task_6 {
         } catch (IOException ex) {
             System.out.println("Ошибка ввода-вывода : " + ex);
         }
+        myArrayList.removeIf(item -> item.equals(""));
         Collections.sort(myArrayList);
         System.out.println("Отсортированный по алфавиту список слов из файла :");
         System.out.println(myArrayList);

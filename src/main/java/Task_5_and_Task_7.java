@@ -10,7 +10,7 @@ public class Task_5_and_Task_7 {
             n1 = scanInt1.nextDouble();
         }catch (InputMismatchException ex){
             System.out.println("Ошибка " + ex);
-            System.out.println("Некорректный ввод числа!(дробные числа вводить через запятую) Поробуйте снова..");
+            System.out.println("Некорректный ввод числа!(дробные числа вводить через запятую) Попробуйте снова..");
             n1 = getNum1();
         }
         return n1;
@@ -24,7 +24,7 @@ public class Task_5_and_Task_7 {
             n2 = scanInt2.nextDouble();
         }catch (InputMismatchException ex){
             System.out.println("Ошибка " + ex);
-            System.out.println("Некорректный ввод числа! (дробные числа вводить через запятую) Поробуйте снова..");
+            System.out.println("Некорректный ввод числа! (дробные числа вводить через запятую) Попробуйте снова..");
             n2 = getNum2();
         }
         return n2;

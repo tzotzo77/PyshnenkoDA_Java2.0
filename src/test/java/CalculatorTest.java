@@ -13,8 +13,8 @@ public class CalculatorTest {
         Sum sum = new Sum();
         double x = 7.545;
         double y = 8.000;
-        double mySum = sum.calc(x, y);
-        assertEquals("Некорректная сумма чисел", x + y, mySum, mySum - (x + y) );
+        double result = sum.calc(x, y);
+        assertEquals("Некорректная сумма чисел", x + y, result, result - (x + y) );
     }
 
     @Test
@@ -23,8 +23,8 @@ public class CalculatorTest {
         Difference diff = new Difference();
         double x = 7.545;
         double y = 8.000;
-        double mySum = diff.calc(x, y);
-        assertEquals("Некорректная разность чисел", x - y, mySum, mySum - (x - y) );
+        double result = diff.calc(x, y);
+        assertEquals("Некорректная разность чисел", x - y, result, result - (x - y) );
     }
 
     @Test
@@ -33,8 +33,8 @@ public class CalculatorTest {
         Multiplication mult = new Multiplication();
         double x = 7.545;
         double y = 8.000;
-        double mySum = mult.calc(x, y);
-        assertEquals("Некорректная произведение чисел", x * y, mySum, mySum - (x * y) );
+        double result = mult.calc(x, y);
+        assertEquals("Некорректное произведение чисел", x * y, result, result - (x * y) );
     }
 
     @Test
@@ -44,7 +44,7 @@ public class CalculatorTest {
         double x = 7.545;
         double y = 8.000;
         double result = div.calc(x, y);
-        assertEquals("Некорректная частное чисел", x / y, result, result - (x / y) );
+        assertEquals("Некорректное частное чисел", x / y, result, result - (x / y) );
     }
 
     @Test
@@ -61,6 +61,6 @@ public class CalculatorTest {
             System.out.println("Ошибка " + e);
             System.out.println("На ноль делить нельзя!!!");
         }
-        Assert.assertNotNull("Не поймали эксепшн", exception);
+        Assert.assertNotNull("Не выброшен эксепшн ArithmeticException", exception);
     }
 }
